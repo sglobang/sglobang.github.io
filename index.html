@@ -83,6 +83,7 @@
         let gstAmountCNY = 0;
         let totalCNY = cny;
         let gstAmountSGD = 0;
+        let originalSGD = cny * rate;
 
         if (includeGST) {
           gstAmountCNY = cny * 0.09;
@@ -94,7 +95,7 @@
 
         let resultHTML = `
           <div>
-            Original Amount: <span class="highlight">CNY ${cny.toFixed(2)}</span><br />
+            Original Amount: <span class="highlight">CNY ${cny.toFixed(2)} ≈ SGD ${originalSGD.toFixed(2)}</span><br />
         `;
 
         if (includeGST) {
